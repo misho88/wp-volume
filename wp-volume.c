@@ -1,10 +1,6 @@
-#include <wp/wp.h>
 #include <stdio.h>
 #include <math.h>
-#include <locale.h>
-#include <spa/utils/defs.h>
-#include <pipewire/keys.h>
-#include <pipewire/extensions/session-manager/keys.h>
+#include <wp/wp.h>
 
 #define APPNAME "wp-volume"
 
@@ -242,9 +238,6 @@ usage_exit(char * name)
 int
 main(int argc, char ** argv)
 {
-	setlocale(LC_ALL, "");
-	setlocale(LC_NUMERIC, "C");
-
 	if (argc > 3) usage_exit(argv[0]);
 	char device_spec = get_device_spec(argc > 1 ? argv[1] : "b");
 	if (device_spec == '\0') usage_exit(argv[0]);
